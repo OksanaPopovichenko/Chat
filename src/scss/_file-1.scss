@@ -1,0 +1,385 @@
+$maxWidth: 1200px;
+$blue: #3498db;
+$grey: #8ea1b4;
+$darkBlue: #34495e;
+$lightgrey: #d4e1ea;
+header{
+    background-color: $blue;
+    width: 100%;
+    
+    
+    .online{
+        display: flex;
+        align-content: center;
+        flex-direction: row;
+        .avatar{
+            width: 40px;
+            height: 40px;
+            background: #b5b5b5;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        input#search {
+            border: 1px solid #e3e3e3;
+            border-radius: 5px;
+            height: 40px;
+            width: 300px;
+            text-indent: 20px;
+        }
+        .form-group .form-control{
+            font-size: 14px;
+            color: #90a4ae;
+            font-family: '../fonts/lato/latobold';
+            position: relative;
+        }
+        .form-group{
+            display: flex;
+            justify-content: center;
+            margin-right: 25px;
+        }
+        .form-group .fa-search{
+            color: #90a4ae;
+            font-size: 20px;
+            position: absolute;
+            right: 10px;
+            top: 12px;
+        }
+    }
+    .account{
+        display: flex;
+        flex-direction: column;
+        .name{
+            font-size: 15px;
+            color: white;
+            font-family: '../fonts/lato/latobold';
+            margin-bottom: 10px;
+        }
+        .available{
+            font-family: '../fonts/lato/latobold';
+            font-size: 12px;
+            color: #226592;
+        }
+        .fa-angle-down{
+            font-size: 12px;
+            color: #226592;
+        }
+
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdownContent{
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+
+            p{
+                font-family: '../fonts/lato/latobold';
+                font-size: 12px;
+                padding: 10px 20px;
+                color: #226592;
+                text-align: center;
+                border-bottom: 1px solid $lightgrey;   
+            }
+            p:hover{
+                background: #b5b5b5;
+                cursor: pointer;
+            }
+        }
+        .dropdown:hover .dropdownContent {
+            display: block;
+            background: #f0f0f0;
+        }
+    }
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+.header{
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .menu span{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start; 
+        
+    }
+    .menu span hr{
+        border: none;
+        background-color: white;
+        height: 3px;
+        width: 25px;
+        margin: 5px 0;
+    }
+}
+
+main{
+    background: #f5f6f8;
+    width: 100%;
+    .row{
+        display: flex;
+        margin: 0;
+        padding: 20px 0;
+    }
+    .leftContent{
+        padding: 15px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+        .chatList{
+            .chatMessage{
+                display: flex;
+                align-items: center;
+                &.active{
+                    background: #f5f6f8;
+                    margin: 0;
+                }
+                .textContent{
+                    width: 162px;
+                    .personName p{
+                        line-height: 2em;
+                        font-size: 16px;
+                        font-family: '../fonts/lato/latobold';
+                        color: $darkBlue;
+                        font-weight: 600;
+                    }
+                    .message p{
+                        font-size: 12px;
+                        font-family: '../fonts/lato/latobold';
+                        color: grey;
+                    }
+                    .readMessage p:first-child{
+                        color: #acbac8;
+                    }
+                    .readMessage p:nth-child(){
+                        color: $lightgrey;
+                    }
+                }
+            }
+            .person{
+                padding: 15px 0;
+                margin-right: 13px;
+
+                .photoProfile{
+                    position: relative;
+                    .avatar{
+                        width: 40px;
+                        height: 40px;
+                        background: #b5b5b5;
+                        border-radius: 50%;
+                    }
+
+                    .numberMessage{
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background: $blue;
+                        position: absolute;
+                        top: -5px;
+                        left: 20px;
+                        box-shadow: 0 0 10px rgba(56, 159, 207, 0.5);
+
+                        &.noMessage{
+                            visibility: hidden;
+                        }
+                        span{
+                            color: white;
+                            margin-left: 6px;
+                            font-size: 12px;
+                            font-family: '../fonts/lato/latobold';
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .newChat{
+        display: flex;
+        border-bottom: 1px solid #edf0f2;
+        padding-bottom: 15px;
+        align-items: center;
+
+        button{
+            margin-left: 110px;
+            background: #d6e3ec;
+            border: none;
+            text-transform: uppercase;
+            color: #8ea1b4;
+            padding: 13px 32px;
+            border-radius: 3px;
+        }
+
+        p{
+            font-family: '../fonts/lato/latobold';
+            font-size: 16px;
+            color: $blue;
+        }
+    }
+
+    .rightContent{
+        .inputMessage input{
+            border: none;
+            border-radius: 3px;
+            width: 805px;
+            margin-left: 30px;
+            padding: 25px;
+            color: #8ea1b4;
+            font-family: '../fonts/lato/latobold';
+        }
+        .chat{
+        width: 873px;
+        height: 647px;
+        margin-left: 30px;
+        overflow-y: scroll;
+        }
+        .activePerson{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddebf4;
+            margin-left: 30px;
+            .icons{
+                display: flex;
+                
+            }
+            .icons i{
+                margin: 15px;
+                color: #c9d6df;
+            }
+        }
+        .personName{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .personName p{
+            padding: 25px 0;
+            font-size: 18px;
+            font-family: '../fonts/lato/latobold';
+            color: #16315c;
+            font-weight: 900;
+            padding-bottom: 28px;
+        }
+        .active{
+            width: 10px;
+            height: 10px;
+            background: $blue;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+        .fromMe{
+            padding: 20px 0;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            p{
+                font-size: 12px;
+                color: white;
+                font-family: '../fonts/lato/latobold';
+            }
+            .avatar{
+                width: 40px;
+                height: 40px;
+                background: #b5b5b5;
+                border-radius: 50%;
+        }
+        .messageText{
+                display: flex;
+                width: 350px;
+                padding: 20px;
+                margin-right: 26px;
+                background: $blue;
+                position: relative;
+                border-radius: 40px;
+                box-sizing: content-box;
+                box-shadow: 0 0 5px rgba(56, 159, 207, 0.5);
+            }
+            .messageText:before{
+                content: "";
+                width: 0; 
+                height: 0;
+                transform: scale(-1, 1);
+                position: absolute; 
+                left: 97%; 
+                top: calc(50% - 12px);
+                border-top: 12px solid transparent;
+                border-right: 24px solid $blue;
+                border-bottom: 12px solid transparent;
+            }
+        }
+        .fromFriend{
+            padding: 20px 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            p{
+                font-size: 12px;
+                color: #8ea1b4;
+                font-family: '../fonts/lato/latobold';
+            }
+            .avatar{
+                width: 40px;
+                height: 40px;
+                background: #b5b5b5;
+                border-radius: 50%;
+        }
+        .messageText{
+                display: flex;
+                width: 350px;
+                padding: 20px;
+                margin-left: 26px;
+                background: white;
+                position: relative;
+                border-radius: 40px;
+                box-sizing: content-box;
+                box-shadow: 0 0 5px rgba(116, 196, 233, 0.5);
+            }
+        }
+        .messageText:before{
+            content: "";
+            width: 0; 
+            height: 0;
+            position: absolute; 
+            right: 97%; 
+            top: calc(50% - 12px);
+            border-top: 12px solid transparent;
+            border-right: 24px solid white;
+            border-bottom: 12px solid transparent;
+        }
+        }
+    }
+.status{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 15px;
+    line-height: 2em;
+    margin-top: 21px;
+
+    .noRead{
+        width: 10px;
+        height: 10px;
+        background: $blue;
+        border-radius: 50%;
+    }
+    .read{
+        background: $lightgrey;
+    }
+
+    .time{
+        font-size: 12px;
+        font-family: '../fonts/lato/latobold';
+        color: grey;
+    }
+    .forActive{
+        visibility: hidden;
+    }
+}
